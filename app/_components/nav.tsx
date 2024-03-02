@@ -4,14 +4,13 @@ import Link from "next/link";
 import {AiOutlineMenu, AiOutlineClose} from "react-icons/ai"
 import {useEffect, useState} from "react";
 
-
-
 const Navbar = () => {
     const [menuOpen, setMenuOpen] = useState(false);
     const [header, setHeader] = useState(false);
     const [lastScrollY, setLastScrollY] = useState(0);
 
-    const linkStyle = "ml-10 hover:underline text-xl";
+    const linkStyle = "ml-10 text-xl font-bold text-blue-900";
+    const underlineStyle = "block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-blue-900";
 
     const handleNav = () => {
         setMenuOpen(!menuOpen);
@@ -36,7 +35,7 @@ const Navbar = () => {
     }, [handleScroll, lastScrollY])
 
     return(
-        <nav className={`fixed w-full transition-transform duration-500 transform h-24 bg-white dark:bg-slate-800 dark:text-white ${header ? 'md:-translate-y-full' : 'md:translate-y-0'}`}>
+        <nav className={`fixed w-full transition-transform duration-400 transform h-24 dark:bg-slate-800 dark:text-white ${header ? 'md:-translate-y-full' : 'md:translate-y-0'}`}>
             <div className={"flex justify-between items-center h-full w-full px-4 2xl:px-16"}>
                 <div>
                     <Link href={"/"}>
@@ -45,24 +44,28 @@ const Navbar = () => {
                 </div>
                 <div className={"hidden md:flex"}>
                     <ul className={"hidden sm:flex"}>
-                        <Link href={"/store"}>
+                        <Link href={"/store"} className={"group transition duration-500"}>
                             <li className={linkStyle}>
                                 Store
+                                <span className={underlineStyle}></span>
                             </li>
                         </Link>
-                        <Link href={"/products"}>
+                        <Link href={"/products"} className={"group transition duration-500"}>
                             <li className={linkStyle}>
                                 Products
+                                <span className={underlineStyle}></span>
                             </li>
                         </Link>
-                        <Link href={"/about"}>
+                        <Link href={"/about"} className={"group transition duration-500"}>
                             <li className={linkStyle}>
                                 About Us
+                                <span className={underlineStyle}></span>
                             </li>
                         </Link>
-                        <Link href={"/contact"}>
+                        <Link href={"/contact"} className={"group transition duration-500"}>
                             <li className={linkStyle}>
                                 Contact
+                                <span className={underlineStyle}></span>
                             </li>
                         </Link>
                     </ul>
