@@ -19,7 +19,7 @@ const Navbar = () => {
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
     const handleScroll = () => {
-        if(window.scrollY >= lastScrollY) {
+        if(window.scrollY >= lastScrollY && window.scrollY >= 50) {
             setHeader(true);
         } else {
             setHeader(false);
@@ -36,7 +36,7 @@ const Navbar = () => {
     }, [handleScroll, lastScrollY])
 
     return(
-        <nav className={`fixed w-full transition-transform duration-300 transform h-24 bg-white ${header ? '-translate-y-full' : 'translate-y-0'}`}>
+        <nav className={`fixed w-full transition-transform duration-500 transform h-24 bg-white dark:bg-slate-800 dark:text-white ${header ? 'md:-translate-y-full' : 'md:translate-y-0'}`}>
             <div className={"flex justify-between items-center h-full w-full px-4 2xl:px-16"}>
                 <div>
                     <Link href={"/"}>
@@ -72,8 +72,8 @@ const Navbar = () => {
                 </div>
             </div>
             <div className={menuOpen
-                ? "fixed left-0 top-0 w-[65%] md:hidden h-screen bg-[#ecf0f3] padding-10 ease-in-out duration-500"
-                : "fixed left-[-100%] top-0 p-10 ease-in-out duration-500"}
+                ? "fixed left-0 top-0 w-[65%] md:hidden h-screen bg-[#ecf0f3] padding-10 ease-in-out duration-500 dark:text-white dark:bg-slate-400"
+                : "fixed left-[-100%] top-0 p-10 ease-in-out duration-500 h-full dark:text-white dark:bg-slate-400"}
             >
                 <div className={"flex w-full items-center justify-end"}>
                     <div onClick={handleNav} className={"cursor-pointer p-10"}>
