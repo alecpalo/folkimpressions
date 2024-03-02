@@ -35,7 +35,7 @@ const Navbar = () => {
     }, [handleScroll, lastScrollY])
 
     return(
-        <nav className={`fixed w-full transition-transform duration-400 transform h-24 dark:bg-slate-800 dark:text-white ${header ? 'md:-translate-y-full' : 'md:translate-y-0'}`}>
+        <nav className={`fixed w-full transition-transform duration-400 bg-white transform h-24 dark:bg-slate-800 dark:text-white ${header ? 'md:-translate-y-full' : 'md:translate-y-0'}`}>
             <div className={"flex justify-between items-center h-full w-full px-4 2xl:px-16"}>
                 <div>
                     <Link href={"/"}>
