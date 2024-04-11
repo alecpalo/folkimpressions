@@ -18,7 +18,7 @@ export default function About() {
                     Image will go here
                 </div>
             </div>
-            <div>
+            <div className={"min-h-screen md:flex bg-slate-500"}>
 
             </div>
         </main>
